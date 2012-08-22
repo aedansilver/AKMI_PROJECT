@@ -1,4 +1,4 @@
---CREDITS AK47SIGH (aka AlexeWarr)
+--CREDITS AK47SIGH (aka AlexeWarr) & MidoKing
 
 local itemid = 6948 -- your item ID
 
