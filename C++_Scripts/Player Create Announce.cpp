@@ -9,22 +9,42 @@ public:
     {
         if (player->GetTotalPlayedTime() < 2)
         {
-            std::string ClassStr = "";
+            /*std::string ClassStr = "";*/
+    		/*ClassStr = "Hunter";*/
+			char msg[500];
             switch (player->getClass())
             {
-            case CLASS_WARRIOR:			ClassStr = "Warrior";		break;
-            case CLASS_PALADIN:			ClassStr = "Paladin";		break;
-            case CLASS_HUNTER:			ClassStr = "Hunter";		break;
-            case CLASS_ROGUE:			ClassStr = "Rogue";			break;
-            case CLASS_PRIEST:			ClassStr = "Priest";		break;
-            case CLASS_DEATH_KNIGHT:	ClassStr = "Death Knight";	break;
-            case CLASS_SHAMAN:			ClassStr = "Shaman";		break;
-            case CLASS_MAGE:			ClassStr = "Mage";			break;
-            case CLASS_WARLOCK:			ClassStr = "Warlock";		break;
-            case CLASS_DRUID:			ClassStr = "Druid";			break;
+            case CLASS_WARRIOR:
+			sprintf(msg, "|cff00FF00Welcome new Brother Warrior [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_PALADIN:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Paladin [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_HUNTER:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Hunter [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_ROGUE:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Rogue [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_PRIEST:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Priest [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_DEATH_KNIGHT:	
+			sprintf(msg, "|cff00FF00Welcome new Brother Death Knight [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_SHAMAN:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Shaman [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_MAGE:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Mage [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_WARLOCK:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Warlock [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
+            case CLASS_DRUID:			
+			sprintf(msg, "|cff00FF00Welcome new Brother Druid [|Hplayer:|h%s|h].", player->GetName(), player->GetName());
+			break;
             }
-            char msg[500];
-            sprintf(msg, "|cff00FF00Welcome new Brother [%s] [%s].", ClassStr, player->GetName());
             sWorld->SendServerMessage(SERVER_MSG_STRING, msg);
         }
     }
