@@ -14,7 +14,7 @@ public:
 
     void OnLogin(Player* player)
     {
-        if (player->GetTotalPlayedTime() < 2) // idk if is in seconds or milliseconds w/e this works :D
+        if (player->GetTotalPlayedTime() < 2) // Time in Millisecond means if played time less than 2 seconds it will welcome the player //
         {
             std::string ClassNameString = ""; // this is for the string
 
