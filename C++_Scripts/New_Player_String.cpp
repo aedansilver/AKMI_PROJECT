@@ -1,4 +1,9 @@
-/* All Credits for AkMi Projects Made by Ak47sigh and Midoking, All Rights Reserved*/
+/*
+Project Maintained by Ak47sigh known as Alexe & Midoking.
+You can redistribute it and/or modify but not to sell.
+Actions against the Copyright will support consequences!
+Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
+*/
 
 #include "ScriptPCH.h"
 
