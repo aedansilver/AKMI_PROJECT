@@ -14,7 +14,7 @@ public:
 
     void OnLogin(Player* player)
     {
-        if (player->GetTotalPlayedTime() < 2) // idk if is in seconds or milliseconds
+        if (player->GetTotalPlayedTime() < 2) // idk if is in seconds or milliseconds w/e this works :D
         {
             std::string ClassNameString = ""; // this is for the string
 
