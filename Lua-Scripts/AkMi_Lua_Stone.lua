@@ -1,4 +1,8 @@
---CREDITS AK47SIGH (aka AlexeWarr) & MidoKing
+-- Project Maintained by Ak47sigh known as Alexe & Midoking.
+-- You can redistribute it and/or modify but not to sell.
+-- Actions against the Copyright will support consequences!
+-- Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
+
 
 local itemid = 6948 -- your item ID
 
