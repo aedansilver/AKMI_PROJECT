@@ -1,3 +1,6 @@
+/* All Credits for AkMi Projects
+Made by Ak47sigh and Midoking*/
+
 #include "ScriptPCH.h"
 
 class welcome_new_login : public PlayerScript
