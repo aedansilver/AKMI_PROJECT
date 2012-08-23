@@ -1,4 +1,4 @@
-/* All Credits for AkMi Projects Made by Ak47sigh and Midoking*/
+/* All Credits for AkMi Projects Made by Ak47sigh and Midoking, All Rights Reserved*/
 
 #include "ScriptPCH.h"
 
