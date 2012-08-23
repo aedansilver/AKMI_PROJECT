@@ -16,7 +16,7 @@ protCode = 2
 end
 
 item:GossipCreateMenu(5695, player, 0)
-item:GossipMenuAddItem(7, "Toggle, I\'m Protection (|cff00ff00Status:|r "..protstatus.."|cff00ff00)|r", protCode, 0, "Toggle Protection Status\n Status: "..protstatus.."") -- add spell when enable: 59084, 55912
+item:GossipMenuAddItem(7, "Toggle, I\'m Protection |cff00ff00(|cff00ff00Status:|r "..protstatus.."|cff00ff00)|r", protCode, 0, "Toggle Protection Status\n Status: "..protstatus.."") -- add spell when enable: 59084, 55912
 item:GossipMenuAddItem(7, "Global Message String", 3, 0)
 item:GossipMenuAddItem(7, "Appear to player's Leader", 6, 0)
 item:GossipMenuAddItem(7, "Appear to player", 8, 0)
