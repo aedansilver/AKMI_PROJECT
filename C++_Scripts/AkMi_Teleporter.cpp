@@ -3,16 +3,6 @@
 #include "ScriptedGossip.h"
 #include <cstring>
 
-enum eEnums
-{
-    SPELL_POLYMORPH         = 12826,
-    SPELL_MARK_OF_THE_WILD  = 26990,
-
-    SAY_NOT_INTERESTED      = -1999922,
-    SAY_WRONG               = -1999923,
-    SAY_CORRECT             = -1999924
-};
-
 #define MSG_ON_TELEPORT		 "|cff288C00Changing location.. please wait|r"
 
 #define GOSSIP_INT_AUCTION	 "Int'l Auction Function"
