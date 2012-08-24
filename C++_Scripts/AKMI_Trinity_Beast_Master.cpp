@@ -1,11 +1,16 @@
-/* All Rights Reserved - AkMi Projects © 2012 */
+/*
+Project Maintained by Ak47sigh known as Alexe & Midoking.
+You can redistribute it and/or modify but not to sell.
+Actions against the Copyright will support consequences!
+Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
+*/
 
 #include "ScriptPCH.h"
 
-class Npc_Beastmaster : public CreatureScript
+class AkMi_Beastmaster : public CreatureScript
 {
 public:
-        Npc_Beastmaster() : CreatureScript("Npc_Beastmaster") { }
+        AkMi_Beastmaster() : CreatureScript("akmi_beastmaster") { }
 
 void CreatePet(Player *player, Creature * m_creature, uint32 entry) {
 
@@ -40,14 +45,13 @@ void CreatePet(Player *player, Creature * m_creature, uint32 entry) {
 		pet->SetUInt32Value(UNIT_FIELD_FACTIONTEMPLATE, player->getFaction());
  
         // prepare visual effect for levelup
-            pet->SetUInt32Value(UNIT_FIELD_LEVEL, player->getLevel() - 1);
+        pet->SetUInt32Value(UNIT_FIELD_LEVEL, player->getLevel() - 1);
         pet->GetMap()->AddToMap(pet->ToCreature());
         // visual effect for levelup
         pet->SetUInt32Value(UNIT_FIELD_LEVEL, player->getLevel());
 		
 		pet->GetCharmInfo()->SetPetNumber(sObjectMgr->GeneratePetNumber(), true);
         if(!pet->InitStatsForLevel(player->getLevel()))
-            sLog->outError ("Pet Create fail: no init stats for entry %u", entry);
  
         pet->UpdateAllStats();
         
@@ -74,14 +78,14 @@ void CreatePet(Player *player, Creature * m_creature, uint32 entry) {
             m_creature->MonsterWhisper("You are not a Hunter!", player->GetGUID(), true);
             return true;
         }
-        player->ADD_GOSSIP_ITEM(4, "Get a New Pet.", GOSSIP_SENDER_MAIN, 30);
+        player->ADD_GOSSIP_ITEM(0, "Get a New Pet.", GOSSIP_SENDER_MAIN, 30);
         if (player->CanTameExoticPets())
         {
-            player->ADD_GOSSIP_ITEM(4, "Get a New Exotic Pet.", GOSSIP_SENDER_MAIN, 50);
+        player->ADD_GOSSIP_ITEM(0, "Get a New Exotic Pet.", GOSSIP_SENDER_MAIN, 50);
         }
-        player->ADD_GOSSIP_ITEM(2, "Take me to the Stable.", GOSSIP_SENDER_MAIN, GOSSIP_OPTION_STABLEPET);
-        player->ADD_GOSSIP_ITEM(6, "Sell me some Food for my Pet.", GOSSIP_SENDER_MAIN, GOSSIP_OPTION_VENDOR);
-                player->ADD_GOSSIP_ITEM(5, "Close Beastmaster Window.", GOSSIP_SENDER_MAIN, 150);
+        player->ADD_GOSSIP_ITEM(0, "Show me to the Stable.", GOSSIP_SENDER_MAIN, GOSSIP_OPTION_STABLEPET);
+        player->ADD_GOSSIP_ITEM(2, "Sell me some Food for my Pet", GOSSIP_SENDER_MAIN, GOSSIP_OPTION_VENDOR);
+        player->ADD_GOSSIP_ITEM(7, "Exit Beastmaster", GOSSIP_SENDER_MAIN, 150);
         player->SEND_GOSSIP_MENU(1, m_creature->GetGUID());
         return true;
     }
@@ -257,7 +261,7 @@ void CreatePet(Player *player, Creature * m_creature, uint32 entry) {
     }
 };
  
-void AddSC_Npc_Beastmaster()
+void AddSC_AkMi_Beastmaster()
 {
-    new Npc_Beastmaster();
+    new AkMi_Beastmaster();
 }
