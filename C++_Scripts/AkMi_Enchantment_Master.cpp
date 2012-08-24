@@ -1,3 +1,10 @@
+/*
+Project Maintained by Ak47sigh known as Alexe & Midoking.
+You can redistribute it and/or modify but not to sell.
+Actions against the Copyright will support consequences!
+Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
+*/
+
 enum Enchants
 {
     ENCHANT_WEP_BERSERKING              = 3789,
@@ -133,10 +140,9 @@ void Enchant(Player* player, Item* item, uint32 enchantid)
     if (!enchantid)
     {
         player->GetSession()->SendNotification("Something went wrong in the code. It has been logged for developers and will be looked into, sorry for the inconvenience.");
-        sLog->outError("enchant_vendor::Enchant: Enchant NPC 'enchantid' is NULL, something went wrong here!");
         return;
     }
-		
+
     item->ClearEnchantment(PERM_ENCHANTMENT_SLOT);
     item->SetEnchantment(PERM_ENCHANTMENT_SLOT, enchantid, 0, 0);
     player->GetSession()->SendNotification("|cff800080%s |cffFF0000succesfully enchanted!", item->GetTemplate()->Name1.c_str());
@@ -154,10 +160,10 @@ void RemoveEnchant(Player* player, Item* item)
 	player->GetSession()->SendNotification("|cff800080%s's |cffFF0000enchant has successfully been removed!", item->GetTemplate()->Name1.c_str());
 }
 
-class npc_enchantment : public CreatureScript
+class akmi_enchantment : public CreatureScript
 {
 public:
-    npc_enchantment() : CreatureScript("npc_enchantment") { }
+    akmi_enchantment() : CreatureScript("akmi_enchantment") { }
  
         bool OnGossipHello(Player* player, Creature* creature)
         {
@@ -191,7 +197,7 @@ public:
 
             switch (action)
             {
-				
+
                 case 1: // Enchant Weapon
                     if (player->HasSkill(SKILL_ENCHANTING) && player->GetSkillValue(SKILL_ENCHANTING) == 450)
                     {
@@ -1230,7 +1236,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_SPIRIT);
@@ -1278,7 +1284,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_ACCURACY);
@@ -1302,7 +1308,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_BLACK_MAGIC);
@@ -1326,7 +1332,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_BATTLEMASTER);
@@ -1350,7 +1356,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_ICEBREAKER);
@@ -1374,7 +1380,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_LIFEWARD);
@@ -1398,7 +1404,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_TITANGUARD);
@@ -1422,7 +1428,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_POTENCY);
@@ -1446,7 +1452,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_MIGHTY_SPELL_POWER);
@@ -1470,7 +1476,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_2WEP_MONGOOSE);
@@ -1494,7 +1500,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_EXECUTIONER);
@@ -1518,7 +1524,7 @@ public:
 							player->PlayerTalkClass->SendCloseGossip();
 							return false;
 						}
-						
+
 						if (item->GetTemplate()->InventoryType == INVTYPE_WEAPON)
 						{
 							Enchant(player, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_OFFHAND), ENCHANT_WEP_BLOOD_DRAINING);
@@ -1620,7 +1626,7 @@ public:
 
 };
 
-void AddSC_npc_enchantment()
+void AddSC_akmi_enchantment()
 {
-  new npc_enchantment();
+  new akmi_enchantment();
 }
