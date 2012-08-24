@@ -167,18 +167,18 @@ public:
  
         bool OnGossipHello(Player* player, Creature* creature)
         {
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Weapon-]", GOSSIP_SENDER_MAIN, 1);
-			player->ADD_GOSSIP_ITEM(1, "[-Enchant Off-Hand Weapon-]", GOSSIP_SENDER_MAIN, 13);
-			player->ADD_GOSSIP_ITEM(1, "[-Enchant 2H Weapon-]", GOSSIP_SENDER_MAIN, 2);
-			player->ADD_GOSSIP_ITEM(1, "[-Enchant Shield-]", GOSSIP_SENDER_MAIN, 3);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Head-]", GOSSIP_SENDER_MAIN, 4);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Shoulders-]", GOSSIP_SENDER_MAIN, 5);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Cloak-]", GOSSIP_SENDER_MAIN, 6);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Chest-]", GOSSIP_SENDER_MAIN, 7);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Bracers-]", GOSSIP_SENDER_MAIN, 8);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Gloves-]", GOSSIP_SENDER_MAIN, 9);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Legs-]", GOSSIP_SENDER_MAIN, 10);
-            player->ADD_GOSSIP_ITEM(1, "[-Enchant Feet-]", GOSSIP_SENDER_MAIN, 11);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Weapon", GOSSIP_SENDER_MAIN, 1);
+	    player->ADD_GOSSIP_ITEM(2, " Enchant Off-Hand Weapon", GOSSIP_SENDER_MAIN, 13);
+	    player->ADD_GOSSIP_ITEM(2, " Enchant 2H Weapon", GOSSIP_SENDER_MAIN, 2);
+	    player->ADD_GOSSIP_ITEM(2, " Enchant Shield", GOSSIP_SENDER_MAIN, 3);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Head", GOSSIP_SENDER_MAIN, 4);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Shoulders", GOSSIP_SENDER_MAIN, 5);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Cloak", GOSSIP_SENDER_MAIN, 6);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Chest", GOSSIP_SENDER_MAIN, 7);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Bracers", GOSSIP_SENDER_MAIN, 8);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Gloves", GOSSIP_SENDER_MAIN, 9);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Legs", GOSSIP_SENDER_MAIN, 10);
+            player->ADD_GOSSIP_ITEM(2, " Enchant Feet", GOSSIP_SENDER_MAIN, 11);
 
             if (player->HasSkill(SKILL_ENCHANTING) && player->GetSkillValue(SKILL_ENCHANTING) == 450)
 			{
