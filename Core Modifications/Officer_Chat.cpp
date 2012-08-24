@@ -25,8 +25,12 @@ Replace with:
 }
 */
 
- case CHAT_MSG_OFFICER:
+        case CHAT_MSG_OFFICER:
         {
+			#define VIP1_COLOR		 "|cffFF0000"
+			#define VIP2_COLOR		 "|cff00FFFF"
+			#define VIP3_COLOR		 "|cffff00ff"
+
 			uint32 accID = GetPlayer()->GetSession()->GetAccountId();
 				QueryResult acc = LoginDatabase.PQuery("SELECT * FROM vip_access WHERE acc_id = '%u'", accID);
 
@@ -41,13 +45,13 @@ Replace with:
 				switch(accInfo[1].GetInt32())
 					{
 					case 1:
-					sWorld->SendWorldText(12001, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // do for vip 1
+					sWorld->SendWorldText(12001, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", VIP1_COLOR, GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // do for vip 1
 					break;
 					case 2:
-					sWorld->SendWorldText(12002, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // u know what's next
+					sWorld->SendWorldText(12002, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", VIP2_COLOR, GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // u know what's next
 					break;
 					case 3:
-					sWorld->SendWorldText(12003, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str());
+					sWorld->SendWorldText(12003, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", VIP3_COLOR, GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str());
 					break;
 				}
         } break;
