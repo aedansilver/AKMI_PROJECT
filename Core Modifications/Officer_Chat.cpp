@@ -28,7 +28,7 @@ Replace with:
  case CHAT_MSG_OFFICER:
         {
 			uint32 accID = GetPlayer()->GetSession()->GetAccountId();
-				QueryResult acc = LoginDatabase.PQuery("SELECT * FROM vip_access WHERE id = '%u'", accID);
+				QueryResult acc = LoginDatabase.PQuery("SELECT * FROM vip_access WHERE acc_id = '%u'", accID);
 
 				if (!acc)
 				{
