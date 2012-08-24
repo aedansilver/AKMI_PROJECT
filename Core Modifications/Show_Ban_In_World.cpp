@@ -44,7 +44,7 @@ Replace with:
 }
 */
 
- static bool HandleBanCharacterCommand(ChatHandler* handler, char const* args)
+     static bool HandleBanCharacterCommand(ChatHandler* handler, char const* args)
     {
         if (!*args)
             return false;
@@ -70,21 +70,16 @@ Replace with:
             return false;
         }
 
-        switch (sWorld->BanCharacter(name, durationStr, reasonStr, handler->GetSession() ? handler->GetSession()->GetPlayerName() : ""))
+        switch (sWorld->BanCharacter(name, durationStr, reasonStr, handler->GetSession() ? handler->GetSession()->GetPlayerName().c_str() : ""))
         {
             case BAN_SUCCESS:
             {
                 if (atoi(durationStr) > 0)
-				{
                     handler->PSendSysMessage(LANG_BAN_YOUBANNED, name.c_str(), secsToTimeString(TimeStringToSecs(durationStr), true).c_str(), reasonStr);
-
-					sWorld->SendWorldText(12100, name.c_str(), handler->GetSession()->GetPlayerName(), secsToTimeString(TimeStringToSecs(durationStr), true).c_str(), reasonStr);
-				}
                 else
-				{
                     handler->PSendSysMessage(LANG_BAN_YOUPERMBANNED, name.c_str(), reasonStr);
-				sWorld->SendWorldText(12101, name.c_str(), handler->GetSession()->GetPlayerName(), reasonStr);
-				}
+		// past this comment wont affect else
+		sWorld->SendWorldText(12100, name.c_str(), handler->GetSession()->GetPlayer()->GetName(), atoi(durationStr) > 0 ? secsToTimeString(TimeStringToSecs(durationStr), true).c_str() : "permanently", reasonStr);
                 break;
             }
             case BAN_NOTFOUND:
