@@ -12,24 +12,24 @@ Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
 
 #define MSG_ON_TELEPORT		 "|cff288C00Changing location.. please wait|r"
 
-#define GOSSIP_INT_AUCTION	 "Int'l Auction Function"
-#define GOSSIP_INT_EXPLORE	 "Int'l Explore All Maps"
+#define GOSSIP_INT_AUCTION	 "|cff000000Int'l Auction Function"
+#define GOSSIP_INT_EXPLORE	 "|cff000000Int'l Explore All Maps"
 #define GOSSIP_INT_FORTUNE	 "|cffAE1EBEDarkness Aura of Fortune|r"
 #define GOSSIP_INT_MAXSKILL	 "|cffC93325Add Your Skill to Max|r"
 
 #define GOSSIP_ITEM_RETURN   "|cff565656Return|r"
 #define GOSSIP_ITEM_MAINMENU "|cff565656[Main Menu]|r"
-#define GOSSIP_ITEM_GLOBAL   "Global GPS Teleport"
+#define GOSSIP_ITEM_GLOBAL   "|cff000000Global GPS Teleport"
 
 #define GOSSIP_WORLD_CITY    "|cff288C00 [World Main City]|r"
-#define GOSSIP_WORLD_BIRTH   " [World Birthplace]"
+#define GOSSIP_WORLD_BIRTH   "|cff000000 [World Birthplace]"
 
-class gossip_teleporter : public CreatureScript
+class akmi_teleporter : public CreatureScript
 {
     public:
 
-        gossip_teleporter()
-            : CreatureScript("gossip_teleporter")
+        akmi_teleporter()
+            : CreatureScript("akmi_teleporter")
         {
         }
 
@@ -382,7 +382,7 @@ class gossip_teleporter : public CreatureScript
 		}
 };
 
-void AddSC_gossip_teleporter()
+void AddSC_akmi_teleporter()
 {
-    new gossip_teleporter();
+    new akmi_teleporter();
 }
