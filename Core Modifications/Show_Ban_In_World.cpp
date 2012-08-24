@@ -79,7 +79,7 @@ Replace with:
                 else
                     handler->PSendSysMessage(LANG_BAN_YOUPERMBANNED, name.c_str(), reasonStr);
 		// past this comment wont affect else
-		sWorld->SendWorldText(12100, name.c_str(), handler->GetSession()->GetPlayer()->GetName(), atoi(durationStr) > 0 ? secsToTimeString(TimeStringToSecs(durationStr), true).c_str() : "permanently", reasonStr);
+		sWorld->SendWorldText(12100, name.c_str(), handler->GetSession()->GetPlayer()->GetName(), atoi(durationStr) > 0 ? "duration (%s)", secsToTimeString(TimeStringToSecs(durationStr), true).c_str() : "permanently", reasonStr);
                 break;
             }
             case BAN_NOTFOUND:
