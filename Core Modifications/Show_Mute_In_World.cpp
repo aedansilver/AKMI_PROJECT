@@ -69,4 +69,4 @@ Add after line:
 */
 handler->PSendSysMessage(target ? LANG_YOU_DISABLE_CHAT : LANG_COMMAND_DISABLE_CHAT_DELAYED, nameLink.c_str(), notSpeakTime, muteReasonStr.c_str());
 
-+ sWorld->SendWorldText(12102, nameLink.c_str(), handler->GetSession()->GetPlayerName(), notSpeakTime, muteReasonStr.c_str());
++ sWorld->SendWorldText(12102, nameLink.c_str(), handler->GetSession()->GetPlayer()->GetName(), notSpeakTime, muteReasonStr.c_str());
