@@ -1,0 +1,53 @@
+ /*
+Project Maintained by Ak47sigh known as Alexe & Midoking.
+You can redistribute it and/or modify but not to sell.
+Actions against the Copyright will support consequences!
+Copyright (C) 2012-2013 AkMi Project <http://www.wow-like.info/>
+*/
+
+/* HOW TO INSTALL:
+Open chat_handler.cpp file from your project solution->game->..
+Search for :
+--]]__
+case CHAT_MSG_OFFICER:
+ {
+            if (GetPlayer()->GetGuildId())
+            {
+                if (Guild* guild = sGuildMgr->GetGuildById(GetPlayer()->GetGuildId()))
+                {
+                    sScriptMgr->OnPlayerChat(GetPlayer(), type, lang, msg, guild);
+
+                    guild->BroadcastToGuild(this, true, msg, lang == LANG_ADDON ? LANG_ADDON : LANG_UNIVERSAL);
+                }
+			}
+} break;
+Replace with:
+}
+*/
+
+ case CHAT_MSG_OFFICER:
+        {
+			uint32 accID = GetPlayer()->GetSession()->GetAccountId();
+				QueryResult acc = LoginDatabase.PQuery("SELECT * FROM vip_access WHERE id = '%u'", accID);
+
+				if (!acc)
+				{
+					sWorld->SendWorldText(12000, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str());
+				break;
+				}
+
+				Field * accInfo = acc->Fetch();
+
+				switch(accInfo[1].GetInt32())
+					{
+					case 1:
+					sWorld->SendWorldText(12001, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // do for vip 1
+					break;
+					case 2:
+					sWorld->SendWorldText(12002, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str()); // u know what's next
+					break;
+					case 3:
+					sWorld->SendWorldText(12003, GetPlayer()->HasFlag(150, 8) ? " |r<G.M>|r " : " ", GetPlayer()->GetName(), GetPlayer()->GetName(), msg.c_str());
+					break;
+				}
+        } break;
