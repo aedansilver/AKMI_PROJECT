@@ -84,7 +84,7 @@ class akmi_teleporter : public CreatureScript
 
 		if (player->isInCombat())
 		{
-			player->MonsterWhisper("|cffFF0000You are in combat sucker, dickpalm!|r", player->GetGUID());
+			player->MonsterWhisper("|cffFF0000You are in combat sucker, dickpalm! trolololol|r", player->GetGUID());
 			player->CLOSE_GOSSIP_MENU();
 
 			return true;
